@@ -1,0 +1,17 @@
+<{% extends "base.html" %}
+
+{% block title %}
+Agregar facultad
+{% endblock %}
+
+{% block titulo %}Nueva facultad{% endblock %}
+{% block contenido %}
+    <form action="" method="POST">{% csrf_token %}
+    <table>
+    {{ formFacultad.as_table }}
+    </table>
+    <input type="reset" class="btn btn-secondary" value="Cancelar" name="Cancelar"/>
+    <input type="submit" formmethod="post" onclick="facultad()" class="btn btn-success" value="Agregar facultad" name="facultad" />
+    </form>
+
+{% endblock %}

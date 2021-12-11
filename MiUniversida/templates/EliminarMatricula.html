@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+Eliminar Matrícula
+{% endblock %}
+
+{% block titulo %}Eliminar matrícula{% endblock %}
+{% block contenido %}
+    <form action="" method="POST">{% csrf_token %}
+    <table>
+    {{ formMat.as_table }}
+    </table>
+    <input type="reset" class="btn btn-secondary" value="Cancelar" name="Cancelar"/>
+    <input type="submit" formmethod="post" onclick="Delmatricula()" class="btn btn-success" value="Eliminar matrícula" name="EMatricula" />
+    </form>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+Eliminar Grupo
+{% endblock %}
+
+{% block titulo %}Eliminar grupo{% endblock %}
+{% block contenido %}
+    <form action="" method="POST">{% csrf_token %}
+    <table>
+    {{ formDltGrupo.as_table }}
+    </table>
+    <input type="reset" class="btn btn-secondary" value="Cancelar" name="Cancelar"/>
+    <input type="submit" formmethod="post" onclick="Delgrupo()" class="btn btn-success" value="Eliminar grupo" name="Egrupo" />
+    </form>
+
+{% endblock %}

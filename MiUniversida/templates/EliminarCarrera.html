@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+Eliminar Carrera
+{% endblock %}
+
+{% block titulo %}Eliminar carrera{% endblock %}
+{% block contenido %}
+    <form action="" method="POST">{% csrf_token %}
+    <table>
+    {{ formE.as_table }}
+    </table>
+    <input type="reset" class="btn btn-secondary" value="Cancelar" name="Cancelar"/>
+    <input type="submit" formmethod="post" onclick="Delcarrera()" class="btn btn-success" value="Eliminar carrera" name="Eliminar carrera" />
+    </form>
+
+{% endblock %}

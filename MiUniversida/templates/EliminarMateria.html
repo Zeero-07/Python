@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+Eliminar Materia
+{% endblock %}
+
+{% block titulo %}Eliminar materia{% endblock %}
+{% block contenido %}
+    <form action="" method="POST">{% csrf_token %}
+    <table>
+    {{ formDltMateria.as_table }}
+    </table>
+    <input type="reset" class="btn btn-secondary" value="Cancelar" name="Cancelar"/>
+    <input type="submit" formmethod="post" onclick="Delmateria()" class="btn btn-success" value="Eliminar materia" name="EMateria" />
+    </form>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+Grupos
+{% endblock %}
+
+
+{% block contenido %}
+    <h2>Grupos</h2>
+    <table class="table table-dark table-hover">
+        <thead>
+        <tr>
+          <th scope="col">Número de grupo</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for grupo in grupos %}
+        <tr>
+          <th scope="row">{{ grupo.numero }}</th>
+        </tr>
+      {% endfor %}
+
+      </tbody>
+    </table>
+{% endblock %}

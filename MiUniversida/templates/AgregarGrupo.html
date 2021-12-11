@@ -1,0 +1,17 @@
+<{% extends "base.html" %}
+
+{% block title %}
+Agregar grupo
+{% endblock %}
+
+{% block titulo %}Nuevo grupo{% endblock %}
+{% block contenido %}
+    <form action="" method="POST">{% csrf_token %}
+    <table>
+    {{ formGrupo.as_table }}
+    </table>
+    <input type="reset" class="btn btn-secondary" value="Cancelar" name="Cancelar"/>
+    <input type="submit" formmethod="post" onclick="grupo()" class="btn btn-success" value="Agregar grupo" name="grupo"/>
+    </form>
+
+{% endblock %}

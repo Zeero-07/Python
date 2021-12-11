@@ -1,0 +1,127 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+    <link rel="shortcut icon" href="https://imgur.com/Msd2xGp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <script src="{% static '/sweetalert2.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static '/sweetalert2.css' %}">
+<link href="{% static '/base.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="side-bar">
+      <div class="close-btn">
+        <i class="fas fa-times"></i>
+      </div>
+      <div class="menu">
+        <div class="item"><a href="../Principal/"><i class="fas fa-desktop"></i>Página principal</a></div>
+        <div class="item">
+          <a class="sub-btn"><i class="fas fa-user"></i>Estudiantes<i class="fas fa-angle-right dropdown"></i></a>
+          <div class="sub-menu">
+            <a href="../AgregarEstudiante/" class="sub-item">Agregar estudiante</a>
+            <a href="../MostrarEstudiantes/" class="sub-item">Mostrar estudiante</a>
+            <a href="../EliminarEstudiante" class="sub-item">Eliminar estudiante</a>
+          </div>
+        </div>
+        <div class="item">
+          <a class="sub-btn"><i class="fab fa-buffer"></i>Carreras<i class="fas fa-angle-right dropdown"></i></a>
+          <div class="sub-menu">
+            <a href="../AgregarCarrera/" class="sub-item">Agregar carrera</a>
+            <a href="../MostrarCarreras/" class="sub-item">Mostrar carreras</a>
+            <a href="../EliminarCarrera/" class="sub-item">Eliminar carrera</a>
+          </div>
+        </div>
+        <div class="item">
+            <a class="sub-btn"><i class="fas fa-box"></i>Cursos<i class="fas fa-angle-right dropdown"></i></a>
+            <div class="sub-menu">
+            <a href="../AgregarCurso/" class="sub-item">Agregar curso</a>
+            <a href="../MostrarCursos/" class="sub-item">Mostrar cursos</a>
+            <a href="../EliminarCurso" class="sub-item">Eliminar curso</a>
+          </div>
+        </div>
+        <div class="item">
+            <a class="sub-btn"><i class="fas fa-clipboard-list"></i>Matrículas<i class="fas fa-angle-right dropdown"></i></a>
+            <div class="sub-menu">
+            <a href="../AgregarMatricula/" class="sub-item">Agregar matrícula</a>
+            <a href="../MostrarMatriculas/" class="sub-item">Mostrar matrículas</a>
+            <a href="../EliminarMatricula" class="sub-item">Eliminar matrícula</a>
+          </div>
+        </div>
+        <div class="item">
+            <a class="sub-btn"><i class="fas fa-book"></i>Materias<i class="fas fa-angle-right dropdown"></i></a>
+            <div class="sub-menu">
+            <a href="../AgregarMateria/" class="sub-item">Agregar materia</a>
+            <a href="../MostrarMaterias" class="sub-item">Mostrar materias</a>
+            <a href="../EliminarMateria/" class="sub-item">Eliminar materia</a>
+          </div>
+        </div>
+        <div class="item">
+            <a class="sub-btn"><i class="fas fa-chalkboard-teacher"></i>Docentes<i class="fas fa-angle-right dropdown"></i></a>
+            <div class="sub-menu">
+            <a href="../AgregarDocente/" class="sub-item">Agregar docente</a>
+            <a href="../MostrarDocentes" class="sub-item">Mostrar docentes</a>
+            <a href="../EliminarDocente/" class="sub-item">Eliminar docente</a>
+          </div>
+        </div>
+        <div class="item">
+            <a class="sub-btn"><i class="fas fa-school"></i>Facultades<i class="fas fa-angle-right dropdown"></i></a>
+            <div class="sub-menu">
+            <a href="../AgregarFacultad/" class="sub-item">Agregar facultad</a>
+            <a href="../MostrarFacultades" class="sub-item">Mostrar facultades</a>
+            <a href="../EliminarFacultad/" class="sub-item">Eliminar facultad</a>
+          </div>
+        </div>
+        <div class="item">
+            <a class="sub-btn"><i class="fas fa-users"></i>Grupos<i class="fas fa-angle-right dropdown"></i></a>
+            <div class="sub-menu">
+            <a href="../AgregarGrupo/" class="sub-item">Agregar grupo</a>
+            <a href="../MostrarGrupos" class="sub-item">Mostrar grupos</a>
+            <a href="../EliminarMateria/" class="sub-item">Eliminar grupo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="main">
+    <article>
+    <h2>{% block titulo %} {% endblock %}</h2>
+        {% block contenido %}
+
+        {% endblock %}
+    </article>
+    </section>
+      <script src="{% static '/codigo.js' %}"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      //jquery for toggle sub menus
+      $('.sub-btn').click(function(){
+        $(this).next('.sub-menu').slideToggle();
+        $(this).find('.dropdown').toggleClass('rotate');
+      });
+
+      //jquery for expand and collapse the sidebar
+      $('.menu-btn').click(function(){
+        $('.side-bar').addClass('active');
+        $('.menu-btn').css("visibility", "hidden");
+      });
+
+      $('.close-btn').click(function(){
+        $('.side-bar').removeClass('active');
+        $('.menu-btn').css("visibility", "visible");
+      });
+    });
+    </script>
+</body>
+</html>

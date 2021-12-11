@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+Cursos
+{% endblock %}
+
+{% block contenido %}
+    <h2>Cursos</h2>
+    <table class="table table-dark table-hover">
+        <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Créditos</th>
+          <th scope="col">Docente</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for curso in cursos %}
+        <tr>
+          <th scope="row">{{ curso.codigo }}</th>
+          <td>{{ curso.nombre }}</td>
+          <td>{{ curso.creditos }}</td>
+          <td>{{ curso.docente }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}

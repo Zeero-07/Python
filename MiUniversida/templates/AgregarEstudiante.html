@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+Agregar Estudiante
+{% endblock %}
+
+{% block titulo %}Agregar estudiante{% endblock %}
+{% block contenido %}
+    <form action="" method="POST">{% csrf_token %}
+    <table>
+    {{ formEstudiante.as_table }}
+    </table>
+        <br/>
+    <input type="reset" class="btn btn-secondary" value="Cancelar" name="Cancelar"/>
+    <input type="submit" formmethod="post" onclick="estudiante()" class="btn btn-success" value="Agregar Estudiante" name="Agregar Estudiante" />
+    </form>
+
+{% endblock %}

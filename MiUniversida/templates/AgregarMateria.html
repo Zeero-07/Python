@@ -1,0 +1,17 @@
+<{% extends "base.html" %}
+
+{% block title %}
+Agregar materia
+{% endblock %}
+
+{% block titulo %}Nueva materia{% endblock %}
+{% block contenido %}
+    <form action="" method="POST">{% csrf_token %}
+    <table>
+    {{ formMateria.as_table }}
+    </table>
+    <input type="reset" class="btn btn-secondary" value="Cancelar" name="Cancelar"/>
+    <input type="submit" formmethod="post" onclick="materia()" class="btn btn-success" value="Agregar materia" name="Agregar materia" />
+    </form>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+Eliminar Facultad
+{% endblock %}
+
+{% block titulo %}Eliminar facultad{% endblock %}
+{% block contenido %}
+    <form action="" method="POST">{% csrf_token %}
+    <table>
+    {{ formDltFacul.as_table }}
+    </table>
+    <input type="reset" class="btn btn-secondary" value="Cancelar" name="Cancelar"/>
+    <input type="submit" formmethod="post" onclick="Delfacultad()" class="btn btn-success" value="Eliminar facultad" name="Efacultad" />
+    </form>
+
+{% endblock %}
